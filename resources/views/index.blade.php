@@ -78,97 +78,43 @@
                                     cepteur sint occaecat cupidatat.</p>
                             </div>
                             <div class="tg-btns">
-                                <a class="tg-btn tg-active" href="javascript:void(0);">Lihat semua</a>
-                                <a class="tg-btn" href="javascript:void(0);">Lebih lanjut</a>
+                                <a class="tg-btn tg-active" href="/allbook">Lihat semua</a>
+                                <a class="tg-btn" href="#">Lebih lanjut</a>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="row">
                                 <div class="tg-newreleasebooks">
+                                    @foreach ($allbook as $item)
+                                        
                                     <div class="col-xs-4 col-sm-4 col-md-6 col-lg-4">
                                         <div class="tg-postbook">
                                             <figure class="tg-featureimg">
                                                 <div class="tg-bookimg">
-                                                    <div class="tg-frontcover"><img src="assets/images/books/img-07.jpg"
+                                                    <div class="tg-frontcover"><img src="/{{$item->gambar}}"
                                                             alt="image description"></div>
-                                                    <div class="tg-backcover"><img src="assets/images/books/img-07.jpg"
+                                                    <div class="tg-backcover"><img src="/{{$item->gambar}}"
                                                             alt="image description"></div>
                                                 </div>
-                                                <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                                                <a class="tg-btnaddtowishlist" href="/detail/{{$item->id}}">
                                                     <i class="icon-heart"></i>
-                                                    <span>add to wishlist</span>
+                                                    <span>Buku Baru</span>
                                                 </a>
                                             </figure>
                                             <div class="tg-postbookcontent">
                                                 <ul class="tg-bookscategories">
-                                                    <li><a href="javascript:void(0);">Adventure</a></li>
-                                                    <li><a href="javascript:void(0);">Fun</a></li>
+                                                    <li><a href="/detail/{{$item->id}}">{{$item->genre}}</a></li>
+                                                    
                                                 </ul>
                                                 <div class="tg-booktitle">
-                                                    <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
+                                                    <h3><a href="/detail/{{$item->id}}">{{$item->judul}}</a></h3>
                                                 </div>
-                                                <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine
-                                                        Culbertson</a></span>
-                                                <span class="tg-stars"><span></span></span>
+                                             
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-4">
-                                        <div class="tg-postbook">
-                                            <figure class="tg-featureimg">
-                                                <div class="tg-bookimg">
-                                                    <div class="tg-frontcover"><img src="assets/images/books/img-08.jpg"
-                                                            alt="image description"></div>
-                                                    <div class="tg-backcover"><img src="assets/images/books/img-08.jpg"
-                                                            alt="image description"></div>
-                                                </div>
-                                                <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                    <i class="icon-heart"></i>
-                                                    <span>add to wishlist</span>
-                                                </a>
-                                            </figure>
-                                            <div class="tg-postbookcontent">
-                                                <ul class="tg-bookscategories">
-                                                    <li><a href="javascript:void(0);">Adventure</a></li>
-                                                    <li><a href="javascript:void(0);">Fun</a></li>
-                                                </ul>
-                                                <div class="tg-booktitle">
-                                                    <h3><a href="javascript:void(0);">Drive Safely, No Bumping</a></h3>
-                                                </div>
-                                                <span class="tg-bookwriter">By: <a href="javascript:void(0);">Sunshine
-                                                        Orlando</a></span>
-                                                <span class="tg-stars"><span></span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-4 hidden-md">
-                                        <div class="tg-postbook">
-                                            <figure class="tg-featureimg">
-                                                <div class="tg-bookimg">
-                                                    <div class="tg-frontcover"><img src="assets/images/books/img-09.jpg"
-                                                            alt="image description"></div>
-                                                    <div class="tg-backcover"><img src="assets/images/books/img-09.jpg"
-                                                            alt="image description"></div>
-                                                </div>
-                                                <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                    <i class="icon-heart"></i>
-                                                    <span>add to wishlist</span>
-                                                </a>
-                                            </figure>
-                                            <div class="tg-postbookcontent">
-                                                <ul class="tg-bookscategories">
-                                                    <li><a href="javascript:void(0);">Adventure</a></li>
-                                                    <li><a href="javascript:void(0);">Fun</a></li>
-                                                </ul>
-                                                <div class="tg-booktitle">
-                                                    <h3><a href="javascript:void(0);">Let The Good Times Roll Up</a></h3>
-                                                </div>
-                                                <span class="tg-bookwriter">By: <a href="javascript:void(0);">Elisabeth
-                                                        Ronning</a></span>
-                                                <span class="tg-stars"><span></span></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
+
                                 </div>
                             </div>
                         </div>
@@ -189,169 +135,34 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="tg-sectionhead">
                             <h2><span>Sejumlah buku pilihan</span>Rekomendasi buku</h2>
-                            <a class="tg-btn" href="javascript:void(0);">Lihat semua</a>
+                            <a class="tg-btn" href="/allbook">Lihat semua</a>
                         </div>
                     </div>
                     <div id="tg-pickedbyauthorslider" class="tg-pickedbyauthor tg-pickedbyauthorslider owl-carousel">
+                        @foreach ($allbooks as $item)
+                            
+                        
                         <div class="item">
                             <div class="tg-postbook">
                                 <figure class="tg-featureimg">
                                     <div class="tg-bookimg">
-                                        <div class="tg-frontcover"><img src="assets/images/books/img-10.jpg"
+                                        <div class="tg-frontcover"><img src="/{{$item->gambar}}"
                                                 alt="image description"></div>
                                     </div>
                                     <div class="tg-hovercontent">
                                         <div class="tg-description">
-                                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore
-                                                toloregna aliqua enim adia minim veniam, quis nostrud.</p>
-                                        </div>
-                                        <strong class="tg-bookpage">Halaman buku: 206</strong>
-                                        <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
-
-                                        <div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
-                                    </div>
-                                </figure>
-                                <div class="tg-postbookcontent">
-                                    <div class="tg-booktitle">
-                                        <h3><a href="javascript:void(0);">Seven Minutes In Heaven</a></h3>
-                                    </div>
-                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Sunshine
-                                            Orlando</a></span>
-                                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                        <i class="fa fa-shopping-basket"></i>
-                                        <em>Add To Basket</em>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="tg-postbook">
-                                <figure class="tg-featureimg">
-                                    <div class="tg-bookimg">
-                                        <div class="tg-frontcover"><img src="assets/images/books/img-11.jpg"
-                                                alt="image description"></div>
-                                    </div>
-                                    <div class="tg-hovercontent">
-                                        <div class="tg-description">
-                                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore
-                                                toloregna aliqua enim adia minim veniam, quis nostrud.</p>
-                                        </div>
-                                        <strong class="tg-bookpage">Halaman buku: 206</strong>
-                                        <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
-
-                                        <div class="tg-ratingbox"><span class="tg-stars"><span></span></span>
+                                            <p>{{$item->deskripsi}}</p>
                                         </div>
                                     </div>
                                 </figure>
                                 <div class="tg-postbookcontent">
                                     <div class="tg-booktitle">
-                                        <h3><a href="javascript:void(0);">Slow And Steady Wins The Race</a></h3>
+                                        <h3><a href="/detail/{{$item->id}}">{{$item->judul}}</a></h3>
                                     </div>
-                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Drusilla
-                                            Glandon</a></span>
-                                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                        <i class="fa fa-shopping-basket"></i>
-                                        <em>Add To Basket</em>
-                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="tg-postbook">
-                                <figure class="tg-featureimg">
-                                    <div class="tg-bookimg">
-                                        <div class="tg-frontcover"><img src="assets/images/books/img-12.jpg"
-                                                alt="image description"></div>
-                                    </div>
-                                    <div class="tg-hovercontent">
-                                        <div class="tg-description">
-                                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore
-                                                toloregna aliqua enim adia minim veniam, quis nostrud.</p>
-                                        </div>
-                                        <strong class="tg-bookpage">Halaman buku: 206</strong>
-                                        <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
-
-                                        <div class="tg-ratingbox"><span class="tg-stars"><span></span></span>
-                                        </div>
-                                    </div>
-                                </figure>
-                                <div class="tg-postbookcontent">
-                                    <div class="tg-booktitle">
-                                        <h3><a href="javascript:void(0);">There’s No Time Like The Present</a></h3>
-                                    </div>
-                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Patrick
-                                            Seller</a></span>
-                                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                        <i class="fa fa-shopping-basket"></i>
-                                        <em>Add To Basket</em>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="tg-postbook">
-                                <figure class="tg-featureimg">
-                                    <div class="tg-bookimg">
-                                        <div class="tg-frontcover"><img src="assets/images/books/img-10.jpg"
-                                                alt="image description"></div>
-                                    </div>
-                                    <div class="tg-hovercontent">
-                                        <div class="tg-description">
-                                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore
-                                                toloregna aliqua enim adia minim veniam, quis nostrud.</p>
-                                        </div>
-                                        <strong class="tg-bookpage">Halaman buku: 206</strong>
-                                        <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
-
-                                        <div class="tg-ratingbox"><span class="tg-stars"><span></span></span>
-                                        </div>
-                                    </div>
-                                </figure>
-                                <div class="tg-postbookcontent">
-                                    <div class="tg-booktitle">
-                                        <h3><a href="javascript:void(0);">Seven Minutes In Heaven</a></h3>
-                                    </div>
-                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Sunshine
-                                            Orlando</a></span>
-                                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                        <i class="fa fa-shopping-basket"></i>
-                                        <em>Add To Basket</em>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="tg-postbook">
-                                <figure class="tg-featureimg">
-                                    <div class="tg-bookimg">
-                                        <div class="tg-frontcover"><img src="assets/images/books/img-11.jpg"
-                                                alt="image description"></div>
-                                    </div>
-                                    <div class="tg-hovercontent">
-                                        <div class="tg-description">
-                                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore
-                                                toloregna aliqua enim adia minim veniam, quis nostrud.</p>
-                                        </div>
-                                        <strong class="tg-bookpage">Halaman buku: 206</strong>
-                                        <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
-
-                                        <div class="tg-ratingbox"><span class="tg-stars"><span></span></span>
-                                        </div>
-                                    </div>
-                                </figure>
-                                <div class="tg-postbookcontent">
-                                    <div class="tg-booktitle">
-                                        <h3><a href="javascript:void(0);">Slow And Steady Wins The Race</a></h3>
-                                    </div>
-                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Drusilla
-                                            Glandon</a></span>
-                                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                        <i class="fa fa-shopping-basket"></i>
-                                        <em>Add To Basket</em>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

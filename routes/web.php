@@ -20,3 +20,7 @@ Route::match(['get'], '/', [IndexController::class, 'index'])->name('index');
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/allbook', [IndexController::class, 'allbook'])->name('allbook');
+
+Route::get('/detail/{id}', [IndexController::class, 'detail'])->name('detail');
+Route::match(['get','post'],'/add', [IndexController::class, 'add'])->name('add');

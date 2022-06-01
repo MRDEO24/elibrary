@@ -68,17 +68,17 @@
                                     <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
                                         <ul>
 
-                                            <li><a href="/elibra">Beranda</a></li>
-
+                                            <li><a href="/">Beranda</a></li>
+                                            <li><a href="/add">Tambah Baru</a></li>
                                             <li><a href="#">Tentang Kami</a></li>
-                                            <li><a href="#">Customer Service</a></li>
+                                            <li><a href="/allbook">Semua Buku</a></li>
                                             @if(Auth::user() == null)
                                             <li class="ml-auto"><a href="/login">Login</a></li>
                                             <li class="ml-auto"><a href="/register">Register</a></li>
                                             @endif
                                         </ul>
                                     </div>
-
+                                    
                                 </nav>
                                 @if(Auth::user())
                                 <div class="tg-wishlistandcart">
@@ -243,6 +243,24 @@
     <script src="/assets/js/appear.js"></script>
     <script src="/assets/js/gmap3.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script>
+        $(document).on("click", ".browse", function() {
+            var file = $(this).parents().find(".file");
+            file.trigger("click");
+        });
+        $('input[type="file"]').change(function(e) {
+            var fileName = e.target.files[0].name;
+            $("#file").val(fileName);
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                // get loaded data and render thumbnail.
+                document.getElementById("preview").src = e.target.result;
+            };
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
 </body>
 
 </html>
