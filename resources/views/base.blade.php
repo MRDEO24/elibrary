@@ -69,7 +69,9 @@
                                         <ul>
 
                                             <li><a href="/">Beranda</a></li>
+                                            @if(Auth::user() && Auth::user()->is_admin == 1 )
                                             <li><a href="/add">Tambah Baru</a></li>
+                                            @endif
                                             <li><a href="#">Tentang Kami</a></li>
                                             <li><a href="/allbook">Semua Buku</a></li>
                                             @if(Auth::user() == null)
