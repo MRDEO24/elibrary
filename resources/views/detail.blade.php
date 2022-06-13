@@ -30,12 +30,13 @@
                                     
                                     <div class="dropdown tg-themedropdown tg-currencydropdown">
                                         <a class="tg-btn tg-active" href="#">Baca</a>
-                                        <a href="javascript:void(0);" id="tg-wishlisst" class="tg-btn"
+                                        <a class="tg-btn" href="{{$book->link}}">Beli</a>
+                                        {{-- <a href="javascript:void(0);" id="tg-wishlisst" class="tg-btn"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Beli
-                                        </a>
+                                        </a> --}}
 
-                                        <ul class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-wishlisst">
+                                        {{-- <ul class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-wishlisst">
                                             <li>
                                                 <a href="https://www.tokopedia.com/">
                                                     Tokopedia
@@ -51,7 +52,7 @@
                                                     Gramedia Online
                                                 </a>
                                             </li>
-                                        </ul>
+                                        </ul> --}}
                                     </div>
 
 

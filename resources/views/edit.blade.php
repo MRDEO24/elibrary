@@ -13,18 +13,22 @@
                     <div class="tg-contactus">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="tg-sectionhead">
-                                <h2>Tambah Buku</h2>
+                                <h2>Edit Buku</h2>
                             </div>
                         </div>
-                        <form class="tg-formtheme tg-formcontactus" method="post" action="/add"  enctype="multipart/form-data">
+                        <form class="tg-formtheme tg-formcontactus" method="post" action=""  enctype="multipart/form-data">
                             @csrf
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                @php
+                                    $old = substr($book->gambar,5);
+                                @endphp
+                                <input type="hidden" name="old" value="{{$old}}">
                                 <input type="file" name="gambar" class="file" accept="image/*" style="visibility:hidden;position: absolute;">
                                 <div class="input-group">
                                     <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
                                     
                                 </div>
-                                <img src="/assets/placeholder.png" id="preview" class="img-thumbnail">
+                                <img src="/{{ $book->gambar }}" id="preview" class="img-thumbnail">
                                 <div class="input-group-append">
                                     <button type="button" class="browse btn btn-primary">Browse...</button>
                                 </div>
@@ -34,20 +38,20 @@
                                 
                                 <fieldset>
                                     <div class="form-group">
-                                        <input type="text" name="judul" class="form-control" placeholder="Judul" required>
+                                        <input type="text" value="{{$book->judul}}" name="judul" class="form-control" placeholder="Judul" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="genre" class="form-control" placeholder="Genre" required>
+                                        <input type="text" value="{{$book->genre}}" name="genre" class="form-control" placeholder="Genre" required>
                                     </div>
                                     <div class="form-group tg-hastextarea">
-                                        <input type="text" name="link" class="form-control" placeholder="Link Pembelian" required>
+                                        <input type="text" value="{{$book->link}}" name="link" class="form-control" placeholder="Link Pembelian" required>
                                     </div>
 
                                     <div class="form-group tg-hastextarea">
-                                        <textarea placeholder="Deskripsi" name="deskripsi" required></textarea>
+                                        <textarea placeholder="Deskripsi" name="deskripsi" required>{{$book->deskripsi}}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="tg-btn tg-active">Tambah</button>
+                                        <button type="submit" class="tg-btn tg-active">Edit</button>
                                     </div>
                                 </fieldset>
 

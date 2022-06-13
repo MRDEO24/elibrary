@@ -21,6 +21,9 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/allbook', [IndexController::class, 'allbook'])->name('allbook');
+Route::get('/dashboard', [IndexController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/detail/{id}', [IndexController::class, 'detail'])->name('detail');
 Route::match(['get','post'],'/add', [IndexController::class, 'add'])->name('add');
+Route::match(['get','post'],'/edit/{id}', [IndexController::class, 'edit'])->name('edit');
+Route::match(['get','post'],'/hapus/{id}', [IndexController::class, 'hapus'])->name('hapus');

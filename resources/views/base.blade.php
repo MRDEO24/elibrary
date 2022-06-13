@@ -70,14 +70,13 @@
 
                                             <li><a href="/">Beranda</a></li>
                                             @if(Auth::user() && Auth::user()->is_admin == 1 )
-                                            <li><a href="/add">Tambah Baru</a></li>
+                                            <li><a href="/dashboard">Dashboard</a></li>
                                             @endif
                                             <li><a href="#">Tentang Kami</a></li>
                                             <li><a href="/allbook">Semua Buku</a></li>
-                                            @if(Auth::user() == null)
-                                            <li class="ml-auto"><a href="/login">Login</a></li>
-                                            <li class="ml-auto"><a href="/register">Register</a></li>
-                                            @endif
+                                            
+                                           
+                                       
                                         </ul>
                                     </div>
                                     
@@ -104,6 +103,15 @@
                                             
                                         </ul>
                                     </div>
+                                </div>
+                                @else
+                                <div class="tg-wishlistandcart">
+                                <div class="dropdown tg-themedropdown tg-wishlistdropdown">
+                                    <a href="/login" id="tg-wishlisst" class="tg-btnthemedropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                                        Login
+                                    </a>
+                                   
+                                </div>
                                 </div>
                                 @endif
                             </div>
